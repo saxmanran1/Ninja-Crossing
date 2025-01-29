@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ninja Crossing</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="manifest" href="manifest.json">
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/service-worker.js')
+      .then(() => console.log('Service Worker Registered'));
+  }
+</script>
+</head>
+<body>
+  <div class="game-container">
+    <canvas id="gameCanvas"></canvas>
+    <div id="instructions">
+      <h1>Ninja Crossing</h1>
+      <p>Help the ninja cross traffic to reach the limousine!</p>
+      <p><strong>Controls:</strong></p>
+      <ul>
+        <li><strong>Desktop:</strong> Arrow Keys</li>
+        <li><strong>Mobile:</strong> Swipe to move</li>
+      </ul>
+      <button id="startButton">Start Game</button>
+    </div>
+    <div id="winScreen" style="display:none;">
+      <h1>You Made It!</h1>
+      <p>You reached the limousine!</p>
+      <button id="playAgainButton">Play Again</button>
+    </div>
+  </div>
+  <script src="game.js"></script>
+</body>
+</html>
